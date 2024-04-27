@@ -1,0 +1,12 @@
+{
+  "name": "build-your-own-redux",
+  "version": "1.0.0",
+  "description": "Own own implementation of Redux",
+  "main": "index.js",
+  "repository": "git@github.com:Devtools-Tech-Team/build-your-own-redux.git",
+  "author": "Yomesh Gupta <yomesh.gupta@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "redux": "^4.0.5"
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<h1>Form Example</h1>
+<form id="myForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" aria-label="First Name" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" aria-label="Last Name" required>
+
+    <label>Gender:</label>
+    <div>
+        <label><input type="radio" name="gender" value="male" aria-label="Male" required> Male</label>
+    </div>
+    <div>
+        <label><input type="radio" name="gender" value="female" aria-label="Female" required> Female</label>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        console.log(formData);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        console.log(data); // Use this data for further processing
+        form.reset(); // Reset the form after submission
+    });
+</script>
+</body>
+</html>
