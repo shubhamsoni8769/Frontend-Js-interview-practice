@@ -60,22 +60,22 @@ console.log(obj.IIFEArrow)
 // ------------------------------------------------------
 
 // var name1 = 'Ram'
-// const obj1 = {
-//     name1:'soni',
-//     printName: {
-//         name1:'ji',
-//         place:'kashi',
-//         fn: function(){
-//             console.log(this)
-//             let fn1 = () =>{
-//                 console.log(this.name1,)
-//             }
-//             fn1()
-//         }
+const obj1 = {
+    name1:'soni',
+    printName: {
+        name1:'ji',
+        place:'kashi',
+        fn: function(){
+            console.log(this)
+            let fn1 = () =>{
+                console.log(this.name1,)
+            }
+            fn1()
+        }
        
        
-//     },
-// }
+    },
+}
 // console.log(obj1.printName.fn())
 
 
@@ -118,3 +118,16 @@ function func() {
 }
 func()
 // Output: 1 3
+
+
+// ------------------------------------------------------
+
+console.log("start")
+new Promise((res, rej) => {
+    console.log("Promise1")
+    resolve("resolved")
+    console.log("Promise2")
+}).then(data => console.log(data))
+console.log("end")
+
+// ------------------------------------------------------
