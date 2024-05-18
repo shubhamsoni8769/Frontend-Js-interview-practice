@@ -32,50 +32,50 @@ callName()
 // ------------------------------------------------------
 
 // Question 2
-var name1 = 'shubham';
-const obj = {
-    name1:'soni',
-    printName: function(){
-        this.name1 = 'ram'
-        return this.name1
-    },
-    printNameArrow: () => {
-        return this.name1
-    },
-    IIFE: (function(){
-        // console.log(this)
-        return this.name1
-    })(),
-    IIFEArrow: (() => {
-        // console.log(this)
-        return this.name1
-    })()
-}  
-console.log('---------------');
-console.log(obj.printName()) 
-console.log(obj.printNameArrow()) 
-console.log(obj.IIFE) 
-console.log(obj.IIFEArrow) 
+// var name1 = 'shubham';
+// const obj = {
+//     name1:'soni',
+//     printName: function(){
+//         this.name1 = 'ram'
+//         return this.name1
+//     },
+//     printNameArrow: () => {
+//         return this.name1
+//     },
+//     IIFE: (function(){
+//         // console.log(this)
+//         return this.name1
+//     })(),
+//     IIFEArrow: (() => {
+//         // console.log(this)
+//         return this.name1
+//     })()
+// }  
+// console.log('---------------');
+// console.log(obj.printName()) 
+// console.log(obj.printNameArrow()) 
+// console.log(obj.IIFE) 
+// console.log(obj.IIFEArrow) 
 
 // ------------------------------------------------------
 
 // var name1 = 'Ram'
-const obj1 = {
-    name1:'soni',
-    printName: {
-        name1:'ji',
-        place:'kashi',
-        fn: function(){
-            console.log(this)
-            let fn1 = () =>{
-                console.log(this.name1,)
-            }
-            fn1()
-        }
+// const obj1 = {
+//     name1:'soni',
+//     printName: {
+//         name1:'ji',
+//         place:'kashi',
+//         fn: function(){
+//             console.log(this)
+//             let fn1 = () =>{
+//                 console.log(this.name1,)
+//             }
+//             fn1()
+//         }
        
        
-    },
-}
+//     },
+// }
 // console.log(obj1.printName.fn())
 
 
@@ -105,29 +105,40 @@ const obj1 = {
 // ------------------------------------------------------
 
 
-function func() {
-  try {
-      console.log(1)
-      return
-  } catch (e) {
-      console.log(2)
-  } finally {
-      console.log(3)
-  }
-  console.log(4)
-}
-func()
+// function func() {
+//   try {
+//       console.log(1)
+//       return
+//   } catch (e) {
+//       console.log(2)
+//   } finally {
+//       console.log(3)
+//   }
+//   console.log(4)
+// }
+// func()
 // Output: 1 3
 
 
 // ------------------------------------------------------
 
-console.log("start")
-new Promise((res, rej) => {
-    console.log("Promise1")
-    resolve("resolved")
-    console.log("Promise2")
-}).then(data => console.log(data))
-console.log("end")
+// console.log("start")
+// new Promise((res, rej) => {
+//     console.log("Promise1")
+//     resolve("resolved")
+//     console.log("Promise2")
+// }).then(data => console.log(data))
+// console.log("end")
 
 // ------------------------------------------------------
+
+// const person = {
+//     firstName: "John",
+//     lastName : "Doe",
+//     id       : 5566,
+//     fullName : function() {
+//       console.log(this.firstName + " " + this.lastName);
+//     }
+// };
+// const person1 = person.fullName.bind(person, "helo");
+// person1()

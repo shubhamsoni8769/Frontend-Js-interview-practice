@@ -1,3 +1,6 @@
+// still need to figure out memoization of object ???
+// {a:1, b:2}
+// {b:2, a:1}
 const memoization = (fn) => {
   const cacheMap = {};
   return function (...args) {
