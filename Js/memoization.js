@@ -6,7 +6,7 @@ const memoization = (fn) => {
   return function (...args) {
     const key = JSON.stringify(args);
     console.log(key);
-    if (cacheMap[key]) {
+    if (cacheMap.hasOwnProperty(key)) {
       return cacheMap[key];
     } else {
       cacheMap[key] = fn.call(this, ...args);
