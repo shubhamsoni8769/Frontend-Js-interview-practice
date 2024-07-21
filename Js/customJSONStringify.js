@@ -52,26 +52,18 @@ function myStrigify(val) {
 const output = myStrigify(obj);
 
 
-
-//Deep Clone
+//dee object
 function deepCopy(obj) {
-  const deepCopyR = (oldObj, newObj) => {
-    let keys = Object.keys(oldObj);
-    for (let key of keys) {
-      const value = oldObj[key];
+  const newObj = Array.isArray(obj) ? [] : {};
 
-      if (typeof value === "object") {
-        newObj[key] = { ...value };
-        deepCopyR(value, newObj[key]);
-      } else {
-        newObj[key] = value
-      }
-      console.log(newObj);
+  for(let key in obj) {
+    if(obj.hasOwnProperty(key) && typeof obj[key] === "object") {
+      newObj[key] = deepCopy(obj[key])
+    } else{
+      newObj[key] = obj[key]
     }
-    return newObj
-  };
-
-  return deepCopyR(obj, {}); // Pass newObj as parameter
+  }
+  return newObj
 }
 
 const originalObj = {
@@ -92,7 +84,8 @@ const originalObj = {
 
 const cloned = deepCopy(originalObj);
 
+
 cloned.a.b.c.d = 5;
 
-console.log("Cloned:", cloned);
-console.log("Original after cloning:", originalObj);
+console.log("Cloned:", cloned.a.b.c.d);
+console.log("Original after cloning:", originalObj.a.b.c.d);
