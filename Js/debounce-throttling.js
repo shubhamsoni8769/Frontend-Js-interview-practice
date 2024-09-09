@@ -8,6 +8,37 @@ const debounceFn = (fn, delay) => {
   };
 };
 
+// if both flag are true meaning intial call and call after one sec both will happen
+
+function customAdvancedDebounce(fn, delay, option = { leading: false, trailing: true }) {
+  let isLeadingInvoked = false;
+  let timerId = null;
+  return function(...args) {
+    const context = this;
+
+    // clear timeout
+    if(timerId) {
+      clearTimeout(timerId)
+    }
+
+    //leading
+    if(option.leading && !timerId) {
+      fn.apply(this, args);
+      isLeadingInvoked = true
+    }else{
+      isLeadingInvoked = false;
+    }
+
+    //traling
+    timerId = setTimeout(() => {
+      if(option.trailing && !isLeadingInvoked) {
+        fn.apply(this, args)
+      }
+      timerId = null
+    }, delay)
+  }
+}
+
 //Throttling
 
 // Count based
